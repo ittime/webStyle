@@ -1,0 +1,21 @@
+
+** word to add **
+
+<!-- word to test: 
+
+מאנגלית לעברית
+boy, bag, blue, black, girl, red, apple, yellow, pink, purple, white, orange, hat, egg, camera, bus, book, notebook, pupil, teacher, scissors, sandwich, school, table
+ילד, תיק, כחולה, שחורה, ילדה, אדום, תפוח, צהוב, ורוד, סגול, לבן, כתום, כובע, ביצה, מצלמה, אוטובוס, ספר, מחברת, תלמיד, מורה, מספריים, כריך, בית ספר, שולחן
+
+
+עברית לאגלית
+Zero, one, two, three, four, five, six, seven, eight, nine, ten
+אפס, אחד, שתיים, שלוש, ארבע, חמש, שש, שבע, שמונה, תשע, עשר
+
+
+
+עברית לאות המתחילה באנגלית
+ילד מתחיל באות B או Y או V
+(כל המילים בעברית אות מתחילה באנגילת)
+
+-->

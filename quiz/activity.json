@@ -1,0 +1,34 @@
+{"quizlist":[
+  
+	{
+	"question":"White",
+	"option1":"לבן",
+	"option2":"אפור",
+	"option3":"שחור"
+	}
+	,{
+	"question":"boy",
+	"option1":"ילד",
+	"option2":"ילדה",
+	"option3":"צהוב"
+	}
+    ,{
+	"question":"notebook",
+	"option1":"מחברת",
+	"option2":"ספר",
+	"option3":"עיפרון"
+	}
+	,{
+	"question":"green",
+	"option1":"ירוק",
+	"option2":"אדום",
+	"option3":"צהוב"
+	}
+	,{
+	"question":"book",
+	"option1":"ספר",
+	"option2":"מחברת",
+	"option3":"ילקוט"
+	}
+]
+}
