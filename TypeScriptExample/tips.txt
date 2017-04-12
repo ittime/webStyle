@@ -1,0 +1,29 @@
+
+
+<<[Tip]>>
+
+
+---[install TypeScript]---
+$ npm install -g TypeScript
+
+
+---[comile TypeScript to JavaScript]---
+$ tsc FileName.ts
+
+### output ###
+FileName.ts
+FileName.js
+
+
+---[compile Automatic]---
+$ tsc example_002.ts --watch
+
+### output ###
+9:13:13 AM - Compilation complete. Watching for file changes.
+
+
+--[]--
+
+
+
+
