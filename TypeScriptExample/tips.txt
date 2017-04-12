@@ -22,8 +22,28 @@ $ tsc example_002.ts --watch
 9:13:13 AM - Compilation complete. Watching for file changes.
 
 
---[]--
+---[variable type]---
+  test     --> function name.
+  <number> --> type of parameter
+  :number  --> return value type
+  Number / String / boolean/Array/Enum/Void
+
+function test (a: Array <number>) : number 
+{
+    let sum: number = 0;
+
+    for(let i = 1; i < a.length ; i++)
+    {
+       //let --> local variable inside block scope
+        sum += a[i];
+
+        let name : String = "test";
+        console.log(name);
+    }
+    
+    return sum;
+}
 
 
-
+---[]---
 
