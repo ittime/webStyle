@@ -1,0 +1,14 @@
+.
+.
+...[ webStyle ]...
+.
+.
+
+webStyle is a git repository for small "web" programs.
+every folder/directory is a stand alone program.
+readme file will be appeared in every folder/directory.
+
+
+::::[ $ git clone https://github.com/ittime/webStyle ]::::
+
+.eof.

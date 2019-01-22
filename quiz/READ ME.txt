@@ -1,13 +1,28 @@
 .
 .
-...[READ ME]...
+...[ quiz ]...
 .
 .
+quiz program is a nice multiple question test.
+(that i have made for my children).
+in this example i have created a english/hebrew exam/test.
+you can change the subject of the exam/test by changing the "activity.json" file
+this is the format of the json file ("activity.json"). 
+
+	{
+	"question":"this is the question",
+	"option1":"this is the right answer",
+	"option2":"this is the wrong answer",
+	"option3":"this is the wrong answer"
+	}
+
+the java script file "controller.js" mix the answer, so every time the question appear, 
+the oreder of the answer change randomly.
+it sum the right answer and the wrong answer
+and display it at the end of the exam/test.
+("report web page")
+
+enjoy .
 
 
-
-
-
-
-
-.fin.
+.eof.
