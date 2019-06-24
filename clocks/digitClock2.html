@@ -1,29 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script>
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
+    <script>
+       
+        /*
+         *  refresh method every 1000 msec (one/1 second)
+         */
+
+        function refreshMethod() {
+            var today = new Date();
+
+            // console.log(i);
+            showTime(today);
+            showDate(today);
+            var t = setTimeout(refreshMethod, 1000);
+        }
+
+        /*
+         *  showDate() - 
+         */
+        function showDate(today) {
+
+            var lblDate = document.getElementById('idDate');
+
+
+            // TODO check 1-9 day/month add 0/zerro first.
+
+            var stDay = today.getDay();
+            var stMonth = today.getMonth();
+            var stYear = today.getFullYear();
+            var stTodayDate = stDay + "/" + stMonth + "/" + stYear;
+
+           // var stDate = stTodayDate;
+
+            lblDate.innerHTML = stTodayDate;
+
+        }
+
+
+        /*
+         *  showTime() - 
+         */
+        function showTime(today) {
+
+            var lblTime = document.getElementById('idTime');
+
+            // var today = new Date();
+            var stHours = today.getHours();
+            var stMinutes = today.getMinutes();
+            var stSeconds = today.getSeconds();
+            var stTime = "";
+
+            stHours = checkTime(stHours);
+            stMinutes = checkTime(stMinutes);
+            stSeconds = checkTime(stSeconds);
+
+            stTime = stHours + ":" + stMinutes + ":" + stSeconds;
+
+            lblTime.innerHTML = stTime;
+
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
 </head>
 
-<body onload="startTime()">
+<body onload="refreshMethod()">
 
-<h1><div id="txt"></div></h1>
+    <h1>
+        <div>
+        <span id="idDate"></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span id="idTime"></span>
+    </div>
+    </h1>
 
 </body>
-</html>
 
+</html>
