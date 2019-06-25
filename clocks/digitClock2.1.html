@@ -16,6 +16,7 @@
             // console.log(i);
             showTime(today);
             showDate(today);
+            dayInWeek(today); //run once
             var t = setTimeout(refreshMethod, 1000);
         }
 
@@ -93,6 +94,17 @@
                 }; // add zero in front of numbers < 10
                 return i;
             }
+
+
+            function dayInWeek(today) {
+
+                var lblDayInWeek = document.getElementById('idDayInWeek');
+                var lblDayInWeek = 0;
+                lblDayInWeek.innerHTML = 'test';
+
+
+            }
+
     </script>
 </head>
 
@@ -104,6 +116,9 @@
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span id="idTime"></span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span id="idDayInWeek"></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
         </div>
     </h1>
 
