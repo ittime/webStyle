@@ -7,9 +7,29 @@
 
     <script>
         /*
-         * global variable - 
+         * global variable - object
          */
 
+        const globalVariable = {
+            gStDay: null,
+            gStMonth: null,
+            gStYear: null,
+            gintDayInWeek: null,
+            comment: 'this is a comment',
+            index: 0,
+            plus () {                
+                this.index++;
+                console.log('this is a plus ' + this.index);
+            },
+            minus : function() {
+                console.log('this is a minus')
+            },
+        };
+
+
+        /*
+         * global variable - primitive variable
+         */
         var gStDay = null;
         var gStMonth = null;
         var gStYear = null;
@@ -25,8 +45,19 @@
             showTime(today);
             showDate(today);
             dayInWeek(today); //run once
+
+
+            // ***********************
+            // test object
+            // globalVariable.plus();
+            // ***********************
+
+
             var t = setTimeout(refreshMethod, 1000);
         }
+
+        const add = (a, b) => a + b;
+
 
         /*
          *  showDate() - 
@@ -102,6 +133,8 @@
             return i;
 
         }
+
+
 
         // function timeDateValidValue(i) {
         //     if (i < 10) {
