@@ -6,12 +6,10 @@
     <title>time+date+day</title>
 
     <script>
-
         /*
-        * global variable - 
-        * 
-        *
-        */
+         * global variable - 
+         */
+
         var gStDay = null;
         var gStMonth = null;
         var gStYear = null;
@@ -40,8 +38,8 @@
 
             // TODO check 1-9 day/month add 0/zerro first.
 
-            var stDay = checkTime(today.getDate());
-            var stMonth = checkTime(today.getMonth());
+            var stDay = timeDateValidValue(today.getDate());
+            var stMonth = timeDateValidValue(today.getMonth());
             var stYear = today.getFullYear();
             var stTodayDate = stDay + "/" + stMonth + "/" + stYear;
 
@@ -87,9 +85,9 @@
             var stSeconds = today.getSeconds();
             var stTime = "";
 
-            stHours = checkTime(stHours);
-            stMinutes = checkTime(stMinutes);
-            stSeconds = checkTime(stSeconds);
+            stHours = timeDateValidValue(stHours);
+            stMinutes = timeDateValidValue(stMinutes);
+            stSeconds = timeDateValidValue(stSeconds);
 
             stTime = stHours + ":" + stMinutes + ":" + stSeconds;
 
@@ -97,17 +95,25 @@
 
         }
 
-        function checkTime(i) {
+        timeDateValidValue = i => {
             if (i < 10) {
                 i = "0" + i
             }; // add zero in front of numbers < 10
             return i;
+
         }
+
+        // function timeDateValidValue(i) {
+        //     if (i < 10) {
+        //         i = "0" + i
+        //     }; // add zero in front of numbers < 10
+        //     return i;
+        // }
 
 
         /*
-        * dayInWeek - today day is
-        */
+         * dayInWeek - today day is
+         */
         function dayInWeek(today) {
 
             var lblDayInWeek = document.getElementById('idDayInWeek');
@@ -125,9 +131,9 @@
 
 
         /*
-        * fnEnglishDayIn - get day in week.
-        */
-        function fnEnglishDayIn(intDayInWeek) {
+         * fnEnglishDayIn - get day in week.
+         */
+        fnEnglishDayIn = intDayInWeek => {
             switch (intDayInWeek) {
                 case 0:
                     stDayInWeek = "Sunday";
@@ -151,7 +157,6 @@
                     stDayInWeek = "Saturday";
                     break;
             }
-            // console.log("fnEnglishDayIn");
             return (stDayInWeek);
         }
     </script>
