@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>time+date+day</title>
+
+    <script>
+        var gStDay = null;
+        var gStMonth = null;
+        var gStYear = null;
+        var intDayInWeek = null;
+
+        /*
+         *  refresh method every 1000 msec (one/1 second)
+         */
+        function refreshMethod() {
+            var today = new Date();
+
+            // console.log(i);
+            showTime(today);
+            showDate(today);
+            dayInWeek(today); //run once
+            var t = setTimeout(refreshMethod, 1000);
+        }
+
+        /*
+         *  showDate() - 
+         */
+        function showDate(today) {
+
+            var lblDate = document.getElementById('idDate');
+
+
+            // TODO check 1-9 day/month add 0/zerro first.
+
+            var stDay = checkTime(today.getDate());
+            var stMonth = checkTime(today.getMonth());
+            var stYear = today.getFullYear();
+            var stTodayDate = stDay + "/" + stMonth + "/" + stYear;
+
+
+            // var stDate = stTodayDate;
+
+            if ((this.gStDay === stDay) && (this.gStMonth === stMonth) && (this.gStYear === stYear)) {
+                this.gStDay = stDay;
+                this.gStMonth = stMonth;
+                this.gStYear = stYear;
+                //  console.log("date didn't change no need to refresh data (view)");
+            } else {
+                lblDate.innerHTML = stTodayDate;
+                // console.log("date have been changed refreshing data (view)");
+                this.gStDay = stDay;
+                this.gStMonth = stMonth;
+                this.gStYear = stYear;
+            }
+        }
+
+
+        /*
+         *
+         */
+        function showDayInWeek(today) {
+            var stDayInWeek = "";
+
+            stDayInWeek = today.getDay();
+
+
+        }
+
+        /*
+         *  showTime() - 
+         */
+        function showTime(today) {
+
+            var lblTime = document.getElementById('idTime');
+
+            // var today = new Date();
+            var stHours = today.getHours();
+            var stMinutes = today.getMinutes();
+            var stSeconds = today.getSeconds();
+            var stTime = "";
+
+            stHours = checkTime(stHours);
+            stMinutes = checkTime(stMinutes);
+            stSeconds = checkTime(stSeconds);
+
+            stTime = stHours + ":" + stMinutes + ":" + stSeconds;
+
+            lblTime.innerHTML = stTime;
+
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+
+
+        function dayInWeek(today) {
+
+            var lblDayInWeek = document.getElementById('idDayInWeek');
+            var intDayInWeek = 0;
+            var stDayInWeek = "";
+
+            // if (intDayInWeek
+
+            intDayInWeek = today.getDay();
+
+            switch (intDayInWeek) {
+                case 0:
+                    stDayInWeek = "Sunday";
+                    break;
+                case 1:
+                    stDayInWeek = "Monday";
+                    break;
+                case 2:
+                    stDayInWeek = "Tuesday";
+                    break;
+                case 3:
+                    stDayInWeek = "Wednesday";
+                    break;
+                case 4:
+                    stDayInWeek = "Thursday";
+                    break;
+                case 5:
+                    stDayInWeek = "Friday";
+                    break;
+                case 6:
+                    stDayInWeek = "Saturday";
+                    break;
+            }
+
+            lblDayInWeek.innerHTML = stDayInWeek;
+
+
+        }
+    </script>
+</head>
+
+<body onload="refreshMethod()">
+
+    <h1>
+        <div>
+            <span id="idDate"></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span id="idTime"></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span id="idDayInWeek"></span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+        </div>
+    </h1>
+
+</body>
+
+</html>
