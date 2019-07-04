@@ -9,7 +9,7 @@
         var gStDay = null;
         var gStMonth = null;
         var gStYear = null;
-        var intDayInWeek = null;
+        var gintDayInWeek = null;
 
         /*
          *  refresh method every 1000 msec (one/1 second)
@@ -98,17 +98,29 @@
             return i;
         }
 
-
+        /*
+        * dayInWeek -
+        */
         function dayInWeek(today) {
 
             var lblDayInWeek = document.getElementById('idDayInWeek');
             var intDayInWeek = 0;
             var stDayInWeek = "";
 
-            // if (intDayInWeek
-
             intDayInWeek = today.getDay();
+            if (intDayInWeek !== gintDayInWeek) {
+                gintDayInWeek = intDayInWeek; // not equal - change it.
+                stDayInWeek = fnEnglishDayIn(intDayInWeek); // English Day In Week.
+                lblDayInWeek.innerHTML = stDayInWeek; //display
+            }
 
+        } //dayInWeek()
+
+
+        /*
+        * fnEnglishDayIn - 
+        */
+        function fnEnglishDayIn(intDayInWeek) {
             switch (intDayInWeek) {
                 case 0:
                     stDayInWeek = "Sunday";
@@ -132,10 +144,8 @@
                     stDayInWeek = "Saturday";
                     break;
             }
-
-            lblDayInWeek.innerHTML = stDayInWeek;
-
-
+            console.log("fnEnglishDayIn");
+            return (stDayInWeek);
         }
     </script>
 </head>
