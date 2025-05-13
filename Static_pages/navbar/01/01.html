@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar button {
+            background-color: #555;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar button:hover {
+            background-color: #777;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .emoji {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <button onclick="showContent('home')">🏠 Home</button>
+        <button onclick="showContent('contact')">📞 Contact</button>
+        <button onclick="showContent('about')">ℹ️ About</button>
+    </div>
+
+    <div class="content" id="content">
+        <h2>Welcome to the Dashboard!</h2>
+        <p>Select a section from the menu above.</p>
+    </div>
+
+    <script>
+        function showContent(section) {
+            let content = document.getElementById("content");
+
+            switch (section) {
+                case "home":
+                    content.innerHTML = "<h2>🏠 Home</h2><p>Welcome to the homepage!</p>";
+                    break;
+                case "contact":
+                    content.innerHTML = "<h2>📞 Contact</h2><p>Reach us at contact@example.com</p>";
+                    break;
+                case "about":
+                    content.innerHTML = "<h2>ℹ️ About</h2><p>Learn more about our dashboard and its features.</p>";
+                    break;
+                default:
+                    content.innerHTML = "<h2>Welcome to the Dashboard!</h2><p>Select a section from the menu above.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
